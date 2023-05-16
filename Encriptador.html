@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+
+  		<meta charset="UTF-8">
+    	<title>Programa de encriptacion</title>
+    	<link rel="stylesheet" type="text/css" href="reset.css">
+    	<link rel="stylesheet" href="EncripStyle.css">
+  	</head>
+
+  	<body>
+  		<header>
+  			<div class="contenedorheader">
+  				<img class="image" src="captura/Logo.svg"> </img>
+  				<h1 class="tituloprinc">PROGRAMA PARA ENCRIPTAR UN TEXTO</h1>
+  			</div>
+  		</header>
+
+  		<main>
+	  		<div class="botones">
+		  		<button class="button" id="boton1" onclick="verificar()"><span>&#x1F512 ENCRIPTAR</span></button>  
+		  		<button class="button" id="boton2" onclick="Desencriptar()"><span>&#x1F513 DESENCRIPTAR</span></button>
+		  		<button class="button" id="boton3" onclick="Copiar()"><span>&#128203 COPIAR</span></button>
+			</div>
+
+		  	<div class="textarea">
+		  		<textarea id="textarea1" onclick="Borrar()" name="texto" rows="6" cols="50">Ingrese el texto aquí</textarea>
+		  		<textarea id="textarea2" name="texto2" rows="6" cols="50" readonly></textarea>
+			</div>
+
+			<div class="warning">
+				<p> &#x1F6C8 Solo letras minúsculas y sin acentos</p>
+			</div>
+
+			
+			<div id="rectangulo">
+				<img id = "captura" src="captura/Muñeco.svg">
+				<p id="descripcion">Ningún mensaje fue encontrado</p>
+				<p id="descripcion2">Ingresa el texto que desees encriptar o desencriptar.</p>
+			</div>
+
+			<script>
+
+				const Abecedario = ["a","e","i","o","u"];
+				const Int = ["mnvbvxb","kbnmzcbxkjdsnm","fmsmdcjk","kndnvkfsf","nvdjlrtms"];
+				const Llave = ["ai","enter","imes","ober","ufat"]
+				let inputTexto = document.getElementById("textarea1");
+				let inputTexto2 = document.getElementById("textarea2");
+
+				let boton1 = document.getElementById("boton1");
+				let boton2 = document.getElementById("boton2");
+
+				function verificar(){
+					let final = inputTexto.value
+					let i = 0;
+					let concatena = "";
+
+					if(inputTexto.value != "" && inputTexto.value != "Ingrese el texto aquí"){
+						for (i = 0; i <= 4; i++) {
+
+							final = final.replaceAll(Abecedario[i],Int[i])
+						}
+						for (i = 0; i <= 4; i++) {
+
+							final = final.replaceAll(Int[i],Llave[i])
+						}
+						document.getElementById("captura").style.display = 'none';
+						document.getElementById("descripcion").style.display = 'none';
+						document.getElementById("descripcion2").style.display = 'none';
+						document.getElementById("textarea2").style.display = 'block';
+						let lista = final.split("")
+						i = 0
+						const intervalID = setInterval(function() {
+							concatena = concatena + lista[i]
+							i++
+							inputTexto2.value = concatena;
+						}, 100);
+
+						inputTexto.value = "Ingrese el texto aquí";
+
+						setTimeout(function() {
+							  clearInterval(intervalID);
+						}, lista.length *100);
+					} else {
+						alert("Inserte un mensaje")
+					}
+				}
+
+				function Desencriptar(){
+					let final = inputTexto.value
+					let i = 0;
+					let concatena = "";
+
+					if(inputTexto.value != "" && inputTexto.value != "Ingrese el texto aquí"){
+						for (i = 0; i <= 4; i++) {
+
+							final = final.replaceAll(Llave[i],Int[i])
+						}
+						for (i = 0; i <= 4; i++) {
+
+							final = final.replaceAll(Int[i],Abecedario[i])
+						}
+
+						document.getElementById("captura").style.display = 'none';
+						document.getElementById("descripcion").style.display = 'none';
+						document.getElementById("descripcion2").style.display = 'none';
+						document.getElementById("textarea2").style.display = 'block';
+						let lista = final.split("")
+						i = 0
+						const intervalID = setInterval(function() {
+							concatena = concatena + lista[i]
+							i++
+							inputTexto2.value = concatena;
+						}, 100);
+
+						inputTexto.value = "Ingrese el texto aquí";
+
+						setTimeout(function() {
+							  clearInterval(intervalID);
+						}, lista.length *100);
+
+					} else {
+						alert("Inserte un mensaje");
+					}
+				}
+
+				function Borrar(){
+					if (true){
+						inputTexto.value = "";
+					}
+				}
+
+				function Copiar(){
+					let texto = document.getElementById("textarea2");
+			  		texto.select();
+			  		document.execCommand("copy");
+			  		document.getElementById("textarea2").style.display = 'none';
+			  		alert("texto copiado");
+				}
+
+				inputTexto.addEventListener("blur", function() {
+			    if (inputTexto.value == "") {
+			        inputTexto.value = "Ingrese el texto aquí";
+			        document.getElementById("captura").style.display = 'block';
+						document.getElementById("descripcion").style.display = 'block';
+						document.getElementById("descripcion2").style.display = 'block';
+						document.getElementById("textarea2").style.display = 'none';
+			        inputTexto2.value = "";
+			    }
+				})
+
+			</script>
+  		</main>
+
+		<footer>
+			<img class="JM" src="captura/JM.png">
+			<p class="contacto"> Desarrollado por Josué Urcia</p>
+			<p class="contacto">&copy Todos los derechos reservados</p>
+			<div class="contactoim">
+				<a href="https://www.linkedin.com/in/tu-nombre-de-linkedin">
+	  				<img src="captura/github.png" width="30" height="30">
+				</a>
+				<a href="https://www.linkedin.com/in/josueurcia">
+	  				<img src="captura/linkedin.png" width="30" height="30">
+				</a>
+			</div>
+		</footer>
+
+	</body>
+
+</html>

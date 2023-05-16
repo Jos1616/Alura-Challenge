@@ -1,0 +1,366 @@
+body {
+        background: linear-gradient(45deg, #0d0f1e, #1a1d2f, #0d0f1e, #1a1d2f);
+        background-size: 400% 400%;
+        animation: gradient 3s ease infinite;
+      }
+      
+@keyframes gradient {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+}
+
+main{
+	border-left: 0.125em solid black;
+	border-right: 0.125em solid black;
+}
+
+header{
+	background: #000033;
+	text-align: center;
+	color: white;
+    text-shadow: 0px 0px 20px #fff,
+                 0px 0px 40px #fff,
+                 0px 0px 60px #fff,
+                 0px 0px 80px #0ff;
+    border: 0.125em solid black;
+}
+
+.contenedorheader{
+	width:100%; 
+	margin: 0 auto;
+	padding: 1.2em;
+}
+
+.tituloprinc{
+	font-family: "Inter";
+	font-size: 1.8em;
+	font-style: normal;
+	color: #FFFFFF;
+	display: inline-flex;
+	text-align: center;
+}
+
+.image {
+	position: absolute;
+	top:1.5%;
+	left: 0%;
+	width:8%; 
+	height:8%;
+	filter: brightness(120%);
+}
+
+#textarea1 {
+
+	font-family: "Inter";
+	font-size: 1.5em;
+	font-style: normal;
+	font-weight: 150%;
+
+	color: #FFFFFF;
+	background-color: rgba(200, 200, 200, 0.8);
+	border: 1px solid #CCCCCC;
+	border-radius: 20px;
+	padding: 12px;
+	resize: none;
+	text-align: center;
+
+	position: absolute;
+	left: 8%;
+	top:16%;
+	height: 40%;
+	width: 40%;
+}
+
+#captura {
+	position: absolute;
+	left: 10%;
+	top:5%;
+	width: 80%;
+	height: 45%;
+	z-index: 2;
+	opacity: 0.8;
+	border-radius: 30px;
+}
+
+#descripcion {
+	position: absolute;
+	top:55%;
+	font-family: "Inter";
+	font-size: 1.2em;
+	font-style: normal;
+	font-weight: bolder;
+	line-height: 100%;
+	justify-content: center;
+	text-align: center;
+	color:#000066;
+}
+
+#descripcion2 {
+	position: absolute;
+	top:65%;
+	width: 70%;
+	font-family: 'Inter';
+	font-style: normal;
+	font-weight: bolder;
+	font-size: 0.8em;
+	line-height: 100%;
+	/* or 24px */
+
+	text-align: center;
+	justify-content: center;
+	color: #2F5F5F;
+}
+
+.warning {
+	color: #FFFFFF;
+	font-family: 'Inter';
+	font-style: normal;
+	font-size: 0.8em;
+	/* or 24px */
+
+	position: absolute;
+	width: 400px;
+	height: 10px;
+	left: 9%;
+	top: 61.5%;
+}
+
+#textarea2 {
+
+	font-family: "Inter";
+	font-size: 1.5em;
+	font-style: normal;
+	font-weight: 150%;
+	line-height: 100%;
+	display: none;
+
+	color: #FFFFFF;
+	background-color: transparent;
+	border: 0px solid #CCCCCC;
+	padding: 10px;
+	resize: none;
+	text-align: center;
+
+	position: absolute;
+	left: 58%;
+	top: 16%;
+	height: 30%;
+	width: 20%;
+	z-index: 2;
+}
+
+#rectangulo {
+
+	background-color: rgba(200, 200, 200, 0.8);
+	/* shadow */
+
+	box-shadow: 60px rgba(0, 0, 0, 0.08);
+	border-radius: 32px;
+
+    position: absolute;
+	width: 30%;
+	height: 59%;
+	left: 54%;
+	top: 16%;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+  }
+
+/*Formato para los botones*/
+
+#boton1 {
+
+/* Dark blue/dark-blue-300 */
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 200%;
+font-size: 0.8em;
+text-align: center;
+
+/* White */
+
+color: #333333;
+
+position: absolute;
+width: 17%;
+height: 5%;
+left: 10%;
+top: 65%;
+
+}
+
+#boton1::after{
+	background-color: #4D9E9E;
+}
+
+#boton2 {
+
+/* to text */
+
+font-family: 'Inter';
+font-style: normal;
+font-size: 0.8em;
+font-weight: 200%;
+text-align: center;
+
+/* Dark blue/dark-blue-300 */
+
+color: #0A3871;
+
+position: absolute;
+width: 17%;
+height: 5%;
+left: 30%;
+top: 65%;
+z-index: 2;
+
+}
+
+#boton2::after{
+	background-color: #000033;
+}
+
+#boton3 {
+
+font-family: 'Inter';
+font-style: normal;
+font-size: 0.8em;
+line-weight: 200%;
+text-align: center;
+
+/* Dark blue/dark-blue-300 */
+
+color: #0A3871;
+
+position: absolute;
+width: 17%;
+height: 5%;
+left: 60%;
+top: 65%;
+z-index: 2;
+
+}
+
+#boton3::after{
+	background-color: #333333;
+}
+
+/*Clase botones*/
+
+.button{
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+
+.button:not(:last-child){
+	margin-bottom: 2rem;
+}
+
+:root {
+	--shadow-color: 208deg 22% 58%;
+	--shadow-elevation-low:0.3px 0.5px 0.7px #000,
+	0.4px 0.8px 1px -1.2px #000, 1px 2px 2.5px -2.5px #000;
+	--shadow-elevation-medium:0.3px 0.5px 0.7px #000,
+	0.8px 1.6px 2px -0.8px #000, 2.1px 4.1px 5.2px -1.7px #000, 5px 10px 12.6px -2.5px #000;
+}
+
+.button {
+	border: none;
+	background: transparent;
+	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1.4rem 2.2rem;
+	overflow: hidden;
+	border-radius: 100vmax;
+	box-shadow: var(--shadow-elevation-medium);
+	transition: box-shadow 0.2s ease-in-out;
+}
+
+.button::after, .button::before {
+	content: "";
+	;
+	position: absolute;
+	inset:0;
+	background-color: red;
+}
+
+.button::before {
+	z-index: 1;
+	right: -100%;
+	background: linear-gradient(to right,#03a9f4 0%,#ffeb3b 50%,#03a9f4 100%);
+	background-size: 50% 100%;
+	animation: scroll 1.2s infinite linear;
+}
+.button::after {
+	z-index: 2;
+	inset: 5px;
+	border-radius: 100vmax;
+	/*background-color: #333333;*/
+	transition: inset 0.2s ease-in-out;
+}
+
+.button span {
+	z-index: 3;
+	color: white;
+	text-transform: uppercase;
+}
+
+.button:hover {
+	box-shadow: var(--shadow-elevation-low);
+}
+
+.button:hover::after {
+	inset: 2px;
+}
+
+@keyframes scroll {
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+
+footer {
+	position: absolute;
+	bottom: 0%;
+	width: 100%;
+	height: 19%;
+	text-align: center;
+	background-image: url(captura/estrellas.jpg);
+	color: white;
+}
+
+.contacto {
+	margin-top: 0.3rem;
+	font-size: 1em;
+	padding: 0.5%;
+}
+
+.contactoim a{
+	margin: 0.5%;
+	display: inline-flex;
+	background-color: transparent;
+	filter: brightness(1.1);
+}
+
+.JM {
+	position: absolute;
+	bottom: 15%;
+	left: 5%;
+	width: 80px;
+	height: 80px;
+}
